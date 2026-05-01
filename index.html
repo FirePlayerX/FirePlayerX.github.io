@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mi pequeña gran aventura</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="ambient" aria-hidden="true">
+    <span class="petal petal-one"></span>
+    <span class="petal petal-two"></span>
+    <span class="petal petal-three"></span>
+    <span class="petal petal-four"></span>
+    <span class="halo halo-one"></span>
+    <span class="halo halo-two"></span>
+  </div>
+
+  <section class="entry-screen" id="entry-screen" aria-label="Entrada">
+    <div class="entry-card">
+      <h2>No es examen, lo prometo</h2>
+      <p>Es una excusa bonita para conocerte un poquito más</p>
+      <button type="button" id="enter-button">Entrar a la aventura</button>
+    </div>
+  </section>
+
+  <aside class="music-dock" aria-label="Música de fondo">
+    <div class="music-topline">
+      <div class="music-copy">
+        <span>Canción</span>
+        <strong id="current-song-name">Flaquita</strong>
+      </div>
+      <button type="button" id="music-toggle" aria-pressed="false">Reproducir</button>
+    </div>
+    <div class="song-options" aria-label="Elegir canción">
+      <button type="button" class="song-choice" data-song="como">Como Te Veo</button>
+      <button type="button" class="song-choice is-selected" data-song="flaquita">Flaquita</button>
+    </div>
+    <audio id="background-song" preload="metadata" loop>
+      <source src="marco-mares-flaquita-audio-128-ytshorts.savetube.me.mp3" type="audio/mpeg">
+    </audio>
+  </aside>
+
+  <section class="pause-overlay" id="pause-overlay" aria-hidden="true">
+    <div class="pause-card">
+      <p class="eyebrow">Pequeña pausa</p>
+      <h2 id="pause-title">Tomando un momento</h2>
+      <p id="pause-fact">Dato curioso: algunos pingüinos ofrecen piedras durante el cortejo para construir juntos un nido.</p>
+      <div class="liquid-bar" id="liquid-bar" aria-hidden="true">
+        <span id="pause-fill"></span>
+      </div>
+      <div class="pause-action">
+        <button type="button" class="pause-continue" id="pause-continue" hidden>Continuar</button>
+      </div>
+    </div>
+  </section>
+
+  <header class="hero">
+    <div class="moving-banner" aria-hidden="true">
+      <div class="banner-track">
+        <article class="banner-card"><span>01</span><strong>Si sonríes, ya gané</strong><small>regla oficial</small></article>
+        <article class="banner-card"><span>02</span><strong>No es encuesta, es pretexto</strong><small>bonito</small></article>
+        <article class="banner-card"><span>03</span><strong>Plan serio: hacerte reír</strong><small>estrategia</small></article>
+        <article class="banner-card"><span>04</span><strong>Nervios, pero con estilo</strong><small>se intenta</small></article>
+        <article class="banner-card"><span>05</span><strong>Spoiler: me interesas</strong><small>poquito no</small></article>
+        <article class="banner-card"><span>01</span><strong>Si sonríes, ya gané</strong><small>regla oficial</small></article>
+        <article class="banner-card"><span>02</span><strong>No es encuesta, es pretexto</strong><small>bonito</small></article>
+        <article class="banner-card"><span>03</span><strong>Plan serio: hacerte reír</strong><small>estrategia</small></article>
+        <article class="banner-card"><span>04</span><strong>Nervios, pero con estilo</strong><small>se intenta</small></article>
+        <article class="banner-card"><span>05</span><strong>Spoiler: me interesas</strong><small>poquito no</small></article>
+      </div>
+    </div>
+
+    <section class="hero-copy">
+      <p class="eyebrow">Mi pequeña gran aventura</p>
+      <h1>Quiero conocerte de una forma diferente.</h1>
+      <p id="story-copy">Esta no es una encuesta normal, es mi forma de conocerte un poquito más, de una manera especial.</p>
+    </section>
+  </header>
+
+  <main class="experience">
+    <aside class="energy-card" aria-label="Brújula de la aventura">
+      <section class="compass-copy" aria-live="polite">
+        <p class="eyebrow">Brújula secreta</p>
+        <h2 id="vibe-title">primer destello</h2>
+        <p id="vibe-description">Todavía no revela todo, pero ya marca una dirección bonita.</p>
+      </section>
+
+      <div class="energy-stage" aria-hidden="true">
+        <span class="compass-ring ring-one"></span>
+        <span class="compass-ring ring-two"></span>
+        <div class="vibe-aura"></div>
+        <span class="energy-dot dot-one"></span>
+        <span class="energy-dot dot-two"></span>
+        <span class="energy-dot dot-three"></span>
+      </div>
+
+      <div class="energy-tags" aria-live="polite">
+        <article>
+          <span>Señal</span>
+          <strong id="energy-word">Inicio suave</strong>
+        </article>
+        <article>
+          <span>Dirección</span>
+          <strong id="energy-intention">Curiosidad bonita</strong>
+        </article>
+      </div>
+
+      <p class="energy-note" id="energy-note">La brújula apenas está despertando, pero ya sabe que quiere seguir.</p>
+    </aside>
+
+    <section class="question-card" aria-live="polite">
+      <div class="progress" aria-hidden="true">
+        <span id="progress-fill"></span>
+      </div>
+
+      <div class="question-stage" id="question-stage">
+        <p class="step-label" id="step-label">Momento 1</p>
+        <h2 id="question-title"></h2>
+        <div class="choices" id="choices"></div>
+      </div>
+
+      <section class="ending" id="ending" hidden>
+        <p class="step-label">La historia eligió</p>
+        <h2 id="ending-title"></h2>
+        <p id="ending-text"></p>
+        <div class="final-note" id="final-note"></div>
+        <button type="button" id="restart">Volver a empezar</button>
+      </section>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
